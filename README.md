@@ -120,3 +120,7 @@ redis_databases: 16
 redis_requirepass: "qwerty123" # Пароль открыт но далее будет задание с Vault
 redis_appendonly: "yes"
 ```
+
+### Идемпотентность
+<img width="1634" height="689" alt="image" src="https://github.com/user-attachments/assets/6d69a5f1-aaa5-445b-8326-4881e1cd019e" />
+
