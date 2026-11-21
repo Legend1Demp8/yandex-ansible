@@ -303,8 +303,8 @@ ReadWritePaths=-/var/lib/redis
 ReadWritePaths=-/var/log/redis
 ReadWritePaths=-/var/run/redis
 ```
-Она запрещает писать не в стандартные каталоги, и в /mnt/redis ему не записать базу и тд и тп
-Модернизируем нашу роль
+Она запрещает писать не в стандартные каталоги, и в /mnt/redis ему не записать базу и тд и тп \
+Модернизируем нашу роль \
 Тэг задания 7 [v7.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v7.0.0)
 cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v7.0.0/roles/redis/tasks/main.yml)
 ```
