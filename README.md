@@ -5,7 +5,8 @@
 используйте Ansible-модули;
 решение должно быть идемпотентным.
 ### Выполнение
-cat playbook.yaml
+Тэг задания 1 [v1.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v1.0.0)
+cat [playbook.yaml](https://github.com/Legend1Demp8/yandex-ansible/blob/v1.0.0/playbook.yaml)
 ```
 ---
 - name: Установка и настройка Redis
@@ -15,7 +16,7 @@ cat playbook.yaml
   roles:
     - redis
 ```
-cat roles/redis/tasks/main.yml
+cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v1.0.0/roles/redis/tasks/main.yml)
 ```
 #SPDX-License-Identifier: MIT-0
 ---
