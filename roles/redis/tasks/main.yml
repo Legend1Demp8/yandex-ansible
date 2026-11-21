@@ -11,9 +11,18 @@
 
 - name: Создание каталога для хранения данных Redis
   ansible.builtin.file:
-    path: /var/lib/redis
+    path: "{{ redis_dir }}"
     state: directory
     owner: redis
     group: redis
     mode: "0750"
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Создание конфигурационного файла Redis из шаблона
+  ansible.builtin.template:
+    src: redis.conf.j2
+    dest: /etc/redis/redis.conf
+    owner: redis
+    group: redis
+    mode: "0640"
   when: ansible_facts['os_family'] == 'Debian'

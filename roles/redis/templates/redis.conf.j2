@@ -1,0 +1,13 @@
+# Конфигурация Redis (управляется Ansible)
+bind 127.0.0.1 ::1
+protected-mode yes
+daemonize yes
+pidfile /run/redis/redis-server.pid
+logfile /var/log/redis/redis-server.log
+loglevel notice
+
+port {{ redis_port }}
+dir {{ redis_dir }}
+databases {{ redis_databases }}
+requirepass {{ redis_requirepass }}
+appendonly {{ redis_appendonly }}

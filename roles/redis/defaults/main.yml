@@ -1,3 +1,8 @@
 #SPDX-License-Identifier: MIT-0
 ---
 # defaults file for redis
+redis_port: 6379
+redis_dir: /var/lib/redis
+redis_databases: 16
+redis_requirepass: "qwerty123" # Пароль открыт но далее будет задание с Vault
+redis_appendonly: "yes"
