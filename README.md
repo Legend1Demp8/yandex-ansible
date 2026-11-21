@@ -126,3 +126,63 @@ Template [roles/redis/templates/redis.conf.j2](https://github.com/Legend1Demp8/y
 ### Идемпотентность
 <img width="1634" height="689" alt="image" src="https://github.com/user-attachments/assets/6d69a5f1-aaa5-445b-8326-4881e1cd019e" />
 
+
+## Задание 4
+### Требования:
+сервис Redis должен запускаться автоматически;
+должен быть включён в автозагрузку;
+Redis перезапускается только при изменении конфигурации.
+
+### Выполнение
+Тэг задания 4 [v4.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v4.0.0) \
+cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v4.0.0/roles/redis/tasks/main.yml)
+```
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for redis
+- name: Установка пакета Redis (только для семейства Debian)
+  ansible.builtin.apt:
+    name: redis-server
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Создание каталога для хранения данных Redis
+  ansible.builtin.file:
+    path: "{{ redis_dir }}"
+    state: directory
+    owner: redis
+    group: redis
+    mode: "0750"
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Создание конфигурационного файла Redis из шаблона
+  ansible.builtin.template:
+    src: redis.conf.j2
+    dest: /etc/redis/redis.conf
+    owner: redis
+    group: redis
+    mode: "0640"
+  notify: Перезапуск сервиса Redis
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Запуск и добавление сервиса Redis в автозагрузку
+  ansible.builtin.service:
+    name: redis-server
+    state: started
+    enabled: true
+  when: ansible_facts['os_family'] == 'Debian'
+```
+
+cat [roles/redis/handlers/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v4.0.0/roles/redis/handlers/main.yml)
+```
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for redis
+- name: Перезапуск сервиса Redis
+  ansible.builtin.service:
+    name: redis-server
+    state: restarted
+  when: ansible_facts['os_family'] == 'Debian'
+```
