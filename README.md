@@ -198,7 +198,7 @@ cat [roles/redis/handlers/main.yml](https://github.com/Legend1Demp8/yandex-ansib
 
 ### Выполнение
 Тэг задания 5 [v5.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v5.0.0) \
-cat [group_vars/all/vault.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v5.0.0/group_vars/all/vault.yml)
+[group_vars/all/vault.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v5.0.0/group_vars/all/vault.yml)
 
 cat [roles/redis/defaults/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v5.0.0/roles/redis/defaults/main.yml)
 ```
@@ -261,6 +261,16 @@ redis_appendonly: "yes"
 ```
 
 ### Выполнение
+Тэг задания 6 [v6.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v6.0.0) \
+dev:
+[inventories/dev/hosts.ini](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/dev/hosts.ini)
+[inventories/dev/group_vars/all/vault.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/dev/group_vars/all/vault.yml)
+[inventories/prod/group_vars/all/vars.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/group_vars/all/vars.yml)
+prod:
+[inventories/prod/hosts.ini](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/hosts.ini)
+[inventories/prod/group_vars/all/vault.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/group_vars/all/vault.yml)
+[inventories/prod/group_vars/all/vars.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/group_vars/all/vars.yml)
+
 
 
 
