@@ -8,3 +8,12 @@
     update_cache: true
     cache_valid_time: 3600
   when: ansible_facts['os_family'] == 'Debian'
+
+- name: Создание каталога для хранения данных Redis
+  ansible.builtin.file:
+    path: /var/lib/redis
+    state: directory
+    owner: redis
+    group: redis
+    mode: "0750"
+  when: ansible_facts['os_family'] == 'Debian'
