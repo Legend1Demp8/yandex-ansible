@@ -80,9 +80,43 @@ appendonly <yes/no>
 Тэг задания 3 [v3.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v3.0.0) \
 cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v3.0.0/roles/redis/tasks/main.yml)
 ```
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for redis
+- name: Установка пакета Redis (только для семейства Debian)
+  ansible.builtin.apt:
+    name: redis-server
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_facts['os_family'] == 'Debian'
 
+- name: Создание каталога для хранения данных Redis
+  ansible.builtin.file:
+    path: "{{ redis_dir }}"
+    state: directory
+    owner: redis
+    group: redis
+    mode: "0750"
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Создание конфигурационного файла Redis из шаблона
+  ansible.builtin.template:
+    src: redis.conf.j2
+    dest: /etc/redis/redis.conf
+    owner: redis
+    group: redis
+    mode: "0640"
+  when: ansible_facts['os_family'] == 'Debian'
 ```
 cat [roles/redis/defaults/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v3.0.0/roles/redis/defaults/main.yml)
 ```
-
-``
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for redis
+redis_port: 6379
+redis_dir: /var/lib/redis
+redis_databases: 16
+redis_requirepass: "qwerty123" # Пароль открыт но далее будет задание с Vault
+redis_appendonly: "yes"
+```
