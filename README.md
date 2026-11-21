@@ -33,3 +33,34 @@ cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/
 
 ## Задание 2
 ### Требования:
+используйте соответствующий Ansible-модуль для управления файловой системой;
+каталог должен существовать до запуска сервиса.
+
+### Выполнение
+Тэг задания 2 [v2.0.0]()
+cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v1.0.0/roles/redis/tasks/main.yml)
+```
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for redis
+- name: Установка пакета Redis (только для семейства Debian)
+  ansible.builtin.apt:
+    name: redis-server
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Создание каталога для хранения данных Redis
+  ansible.builtin.file:
+    path: /var/lib/redis
+    state: directory
+    owner: redis
+    group: redis
+    mode: "0750"
+  when: ansible_facts['os_family'] == 'Debian'
+```
+
+### Идемпотентность
+Поскольку стандартная установка из репозитория уже автоматически настраивает папку то по сути нам не обязателен данный шаг
+<img width="1634" height="289" alt="image" src="https://github.com/user-attachments/assets/7d6640c0-1396-4883-9c6e-8eb39ff4c841" />
