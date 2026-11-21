@@ -4,5 +4,5 @@
 redis_port: 6379
 redis_dir: /var/lib/redis
 redis_databases: 16
-redis_requirepass: "qwerty123" # Пароль открыт но далее будет задание с Vault
+redis_requirepass: "{{ vault_redis_requirepass }}"
 redis_appendonly: "yes"
