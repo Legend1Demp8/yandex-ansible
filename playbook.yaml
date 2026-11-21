@@ -1,0 +1,7 @@
+---
+- name: Установка и настройка Redis
+  hosts: all
+  become: true
+
+  roles:
+    - redis
