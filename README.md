@@ -37,8 +37,8 @@ cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/
 каталог должен существовать до запуска сервиса.
 
 ### Выполнение
-Тэг задания 2 [v2.0.0]()
-cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v1.0.0/roles/redis/tasks/main.yml)
+Тэг задания 2 [v2.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v2.0.0) \
+cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v2.0.0/roles/redis/tasks/main.yml)
 ```
 #SPDX-License-Identifier: MIT-0
 ---
