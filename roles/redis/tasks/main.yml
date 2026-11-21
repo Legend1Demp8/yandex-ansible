@@ -18,6 +18,27 @@
     mode: "0750"
   when: ansible_facts['os_family'] == 'Debian'
 
+- name: Создание директории для systemd override
+  ansible.builtin.file:
+    path: /etc/systemd/system/redis-server.service.d
+    state: directory
+    mode: "0755"
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Добавление redis_dir в разрешенные пути systemd (без затирания старых)
+  ansible.builtin.lineinfile:
+    path: /etc/systemd/system/redis-server.service.d/override.conf
+    create: true
+    mode: "0644"
+    line: "{{ item }}"
+  loop:
+    - "[Service]"
+    - "ReadWritePaths=-{{ redis_dir }}"
+  notify:
+    - Перезагрузка systemd
+    - Перезапуск сервиса Redis
+  when: ansible_facts['os_family'] == 'Debian'
+
 - name: Создание конфигурационного файла Redis из шаблона
   ansible.builtin.template:
     src: redis.conf.j2
