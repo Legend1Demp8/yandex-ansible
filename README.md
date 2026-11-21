@@ -285,6 +285,10 @@ redis_dir: /var/lib/redis
 redis_appendonly: "yes"
 ```
 
+### Идемпотентность
+<img width="951" height="827" alt="image" src="https://github.com/user-attachments/assets/bd00f956-014b-4ada-8462-7076590f3bc9" />
+
+
 
 
 
