@@ -64,3 +64,25 @@ cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/
 ### Идемпотентность
 Поскольку стандартная установка из репозитория уже автоматически настраивает папку то по сути нам не обязателен данный шаг
 <img width="1634" height="289" alt="image" src="https://github.com/user-attachments/assets/7d6640c0-1396-4883-9c6e-8eb39ff4c841" />
+
+## Задание 3
+### Требования:
+Создайте конфигурационный файл Redis через шаблон Ansible, чтобы все параметры можно было переопределять через переменные.
+```
+port <number>
+dir <path>
+databases <number>
+requirepass <password>
+appendonly <yes/no> 
+```
+
+### Выполнение
+Тэг задания 3 [v3.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v3.0.0) \
+cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v3.0.0/roles/redis/tasks/main.yml)
+```
+
+```
+cat [roles/redis/defaults/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v3.0.0/roles/redis/defaults/main.yml)
+```
+
+``
