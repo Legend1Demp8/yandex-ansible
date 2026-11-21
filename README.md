@@ -29,4 +29,7 @@ cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/
     cache_valid_time: 3600
   when: ansible_facts['os_family'] == 'Debian'
 ```
-<img width="1634" height="477" alt="image" src="https://github.com/user-attachments/assets/e7ff7f42-ab4a-49cd-a179-ce47be3326b3" />
+
+<img width="1637" height="535" alt="image" src="https://github.com/user-attachments/assets/c69da7f6-9dd7-4e12-82d8-451aab7ce35b" />
+
+## Задание 2
