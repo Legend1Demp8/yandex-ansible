@@ -5,7 +5,7 @@
 используйте Ansible-модули;
 решение должно быть идемпотентным.
 ### Выполнение
-Тэг задания 1 [v1.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v1.0.0)
+Тэг задания 1 [v1.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v1.0.0) \
 cat [playbook.yaml](https://github.com/Legend1Demp8/yandex-ansible/blob/v1.0.0/playbook.yaml)
 ```
 ---
