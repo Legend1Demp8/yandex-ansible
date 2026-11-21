@@ -262,7 +262,7 @@ redis_appendonly: "yes"
 
 ### Выполнение
 Тэг задания 6 [v6.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v6.0.0) \
-dev: \
+#### dev: 
 [inventories/dev/hosts.ini](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/dev/hosts.ini) \
 [inventories/dev/group_vars/all/vault.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/dev/group_vars/all/vault.yml) \
 cat [inventories/prod/group_vars/all/vars.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/group_vars/all/vars.yml)
@@ -273,7 +273,8 @@ redis_databases: 4
 redis_dir: /mnt/redis
 redis_appendonly: "no"
 ```
-prod: \
+
+#### prod: 
 [inventories/prod/hosts.ini](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/hosts.ini) \
 [inventories/prod/group_vars/all/vault.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/group_vars/all/vault.yml) \
 cat [inventories/prod/group_vars/all/vars.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v6.0.0/inventories/prod/group_vars/all/vars.yml)
