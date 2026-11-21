@@ -190,3 +190,29 @@ cat [roles/redis/handlers/main.yml](https://github.com/Legend1Demp8/yandex-ansib
 ### Идемпотентность
 <img width="937" height="795" alt="image" src="https://github.com/user-attachments/assets/5584b926-37e9-484e-b819-2aec8a109f09" />
 
+
+## Задание 5
+### Требования:
+пароль Redis не хранится в открытом виде;
+используется Ansible Vault.
+
+### Выполнение
+Тэг задания 5 [v5.0.0](https://github.com/Legend1Demp8/yandex-ansible/tree/v5.0.0) \
+cat [group_vars/all/vault.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v5.0.0/group_vars/all/vault.yml)
+
+cat [roles/redis/defaults/main.yml](https://github.com/Legend1Demp8/yandex-ansible/blob/v5.0.0/roles/redis/defaults/main.yml)
+```
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for redis
+redis_port: 6379
+redis_dir: /var/lib/redis
+redis_databases: 16
+redis_requirepass: "{{ vault_redis_requirepass }}"
+redis_appendonly: "yes"
+```
+
+### Идемпотентность
+<img width="934" height="821" alt="image" src="https://github.com/user-attachments/assets/3f04015d-86a6-4b73-a65f-9eab4a652cb0" />
+
+
