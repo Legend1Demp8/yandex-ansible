@@ -25,4 +25,12 @@
     owner: redis
     group: redis
     mode: "0640"
+  notify: Перезапуск сервиса Redis
+  when: ansible_facts['os_family'] == 'Debian'
+
+- name: Запуск и добавление сервиса Redis в автозагрузку
+  ansible.builtin.service:
+    name: redis-server
+    state: started
+    enabled: true
   when: ansible_facts['os_family'] == 'Debian'
