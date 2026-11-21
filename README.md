@@ -186,3 +186,7 @@ cat [roles/redis/handlers/main.yml](https://github.com/Legend1Demp8/yandex-ansib
     state: restarted
   when: ansible_facts['os_family'] == 'Debian'
 ```
+
+### Идемпотентность
+<img width="937" height="795" alt="image" src="https://github.com/user-attachments/assets/5584b926-37e9-484e-b819-2aec8a109f09" />
+
