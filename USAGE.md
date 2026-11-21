@@ -88,11 +88,11 @@ Ansible запросит мастер-пароль в терминале пер�
 
 * **Запуск для `dev`:**
   ```bash
-  ansible-playbook -i inventories/dev/hosts.ini playbook.yaml --vault-password-file ~/.vault_pass.txt
+  ansible-playbook -i inventories/dev playbook.yaml --vault-password-file ~/.vault_pass.txt
   ```
 * **Запуск для `prod`:**
   ```bash
-  ansible-playbook -i inventories/prod/hosts.ini playbook.yaml --vault-password-file ~/.vault_pass.txt
+  ansible-playbook -i inventories/prod playbook.yaml --vault-password-file ~/.vault_pass.txt
   ```
 
 ## Проверка работоспособности
