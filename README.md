@@ -1,5 +1,4 @@
 ## Задание 1
-
 ### Требования:
 установка должна выполняться только на системах семейства Debian;
 используйте Ansible-модули;
@@ -29,7 +28,8 @@ cat [roles/redis/tasks/main.yml](https://github.com/Legend1Demp8/yandex-ansible/
     cache_valid_time: 3600
   when: ansible_facts['os_family'] == 'Debian'
 ```
-
+### Идемпотентность
 <img width="1637" height="535" alt="image" src="https://github.com/user-attachments/assets/c69da7f6-9dd7-4e12-82d8-451aab7ce35b" />
 
 ## Задание 2
+### Требования:
