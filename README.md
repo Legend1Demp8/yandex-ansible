@@ -121,6 +121,8 @@ redis_requirepass: "qwerty123" # Пароль открыт но далее бу�
 redis_appendonly: "yes"
 ```
 
+Template [roles/redis/templates/redis.conf.j2](https://github.com/Legend1Demp8/yandex-ansible/blob/v3.0.0/roles/redis/templates/redis.conf.j2)
+
 ### Идемпотентность
 <img width="1634" height="689" alt="image" src="https://github.com/user-attachments/assets/6d69a5f1-aaa5-445b-8326-4881e1cd019e" />
 
