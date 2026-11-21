@@ -215,4 +215,52 @@ redis_appendonly: "yes"
 ### Идемпотентность
 <img width="934" height="821" alt="image" src="https://github.com/user-attachments/assets/3f04015d-86a6-4b73-a65f-9eab4a652cb0" />
 
+## Задание 6
+### Требования:
+параметры должны отличаться между окружениями;
+переключение окружения должно происходить через inventory;
+плейбук не должен изменяться.
+
+### Структура
+```
+.
+├── inventories
+│   ├── dev
+│   │   ├── group_vars
+│   │   │   └── all
+│   │   │       ├── vars.ini
+│   │   │       └── vault.yml
+│   │   └── hosts.ini
+│   └── prod
+│       ├── group_vars
+│       │   └── all
+│       │       ├── vars.yml
+│       │       └── vault.yml
+│       └── hosts.ini
+├── playbook.yaml
+├── README.md
+└── roles
+    └── redis
+        ├── defaults
+        │   └── main.yml
+        ├── files
+        ├── handlers
+        │   └── main.yml
+        ├── meta
+        │   └── main.yml
+        ├── README.md
+        ├── tasks
+        │   └── main.yml
+        ├── templates
+        │   └── redis.conf.j2
+        ├── tests
+        │   ├── inventory
+        │   └── test.yml
+        └── vars
+            └── main.yml
+```
+
+### Выполнение
+
+
 
